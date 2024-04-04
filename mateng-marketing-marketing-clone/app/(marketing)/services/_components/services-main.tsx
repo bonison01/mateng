@@ -67,5 +67,24 @@ export function ServicesMain() {
         </Button>
       </div>
     </div>
+    <script>
+        // Function to create and append iframe
+        function embedGoogleSheet() {
+            var embedLink = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQdF2f66XVKdulayJ7yBHc6BMLYvn1sXuJIq83gZvDN5ugZrp5uQfcVzqVXe94Iu1WNM0ooE072u0lw/pubhtml'; // Replace with your embed link
+            var sheetContainer = document.getElementById('sheetContainer');
+
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute('src', embedLink);
+            iframe.setAttribute('width', '100%'); // Adjust width as needed
+            iframe.setAttribute('height', '600'); // Adjust height as needed
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('scrolling', 'no');
+
+            sheetContainer.appendChild(iframe);
+        }
+
+        // Call the function to embed Google Sheet
+        embedGoogleSheet();
+    </script>
   );
 }
