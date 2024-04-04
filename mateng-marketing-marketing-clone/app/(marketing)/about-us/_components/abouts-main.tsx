@@ -40,7 +40,7 @@ export function AboutsMain() {
         </Link>
       </div>
       {/* Embed the iframe here */}
-      <iframe src="URL_TO_PUBLISHED_SHEET" width="100%" height="400"></iframe>
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTqhJ96Q5S2xKtvtwjqmytwZeOCZnkBBOP7eJfMgVmoIHbg1LA-V9YhCocI2_u7cwkRPvTqPcep34yx/pubhtml?gid=691031807&single=true" width="100%" height="400"></iframe>
     </div>
   );
 }
