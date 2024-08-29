@@ -1,21 +1,9 @@
-import { Poppins } from "next/font/google";
-import { Navbar } from "./_components/navbar";
-import { cn } from "@/lib/utils";
-import { Toaster } from "sonner";
+import MarketingLayout from '@/components/MarketingLayout';
 
-const font = Poppins({
-  subsets: ["latin"],
-  weight: ["900", "800", "700", "500", "400", "300", "200", "100", "600"],
-});
-
-const MarketingLayout = ({ children }: { children: React.ReactNode }) => {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={cn("h-full bg-white", font.className)}>
-      <Navbar />
-      <main className="bg-white">{children}</main>
-      <Toaster />
-    </div>
+    <MarketingLayout>
+      {children}
+    </MarketingLayout>
   );
-};
-
-export default MarketingLayout;
+}
