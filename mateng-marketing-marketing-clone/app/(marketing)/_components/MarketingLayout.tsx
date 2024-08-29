@@ -1,5 +1,3 @@
-// app/_components/MarketingLayout.tsx
-
 import { Poppins } from "next/font/google";
 import { Navbar } from "./navbar";
 import { cn } from "@/lib/utils";
