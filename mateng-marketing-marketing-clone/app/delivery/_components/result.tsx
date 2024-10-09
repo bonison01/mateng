@@ -1,6 +1,6 @@
 "use client";
 
-import { instantRates } from "@/data/instant-rates";
+import { instantRates } from "./instant-rates";
 import { useInstantRates } from "@/hooks/use-instant-rates";
 import { cn } from "@/lib/utils";
 

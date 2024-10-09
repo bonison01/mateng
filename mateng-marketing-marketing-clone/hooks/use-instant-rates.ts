@@ -1,4 +1,4 @@
-import { instantRates } from "@/data/instant-rates";
+import { instantRates } from "../../data/instant-rates";
 import { create } from "zustand";
 
 type InstantRateStore = {
