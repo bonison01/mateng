@@ -20,29 +20,20 @@ import {
 import { fromAreas } from "./areas";
 import { useInstantRates } from "@/hooks/use-instant-rates";
 
-// Define the type for the state returned by useInstantRates
-type InstantRatesState = {
-  from?: string; // Mark 'from' as optional
-  to?: string;   // Mark 'to' as optional
-  setFrom: (value: string) => void;
-  setTo: (value: string) => void;
-};
-
 export function FromAutocomplete() {
   const [open, setOpen] = React.useState(false);
-  const [selectedArea, setSelectedArea] = React.useState<string | "">("");
-
-  // Use the hook and explicitly define the state type
-  const setFrom = useInstantRates((state: InstantRatesState) => state.setFrom);
+  const [selectedArea, setSelectedArea] = React.useState("");
+  const setFrom = useInstantRates((state) => state.setFrom);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
+          variant="outline"
           role="combobox"
           aria-expanded={open}
           className={cn(
-            "min-w-[200px] sm:min-w-[250px] justify-between sm:text-xl capitalize",
+            "min-w-[200px]  sm:min-w-[250px] justify-between sm:text-xl capitalize",
             !selectedArea && "text-gray-400"
           )}
         >
@@ -59,7 +50,7 @@ export function FromAutocomplete() {
               <CommandItem
                 key={area}
                 value={area}
-                onSelect={(currentArea: string) => {
+                onSelect={(currentArea) => {
                   setSelectedArea(
                     currentArea.toLowerCase() === selectedArea.toLowerCase()
                       ? ""

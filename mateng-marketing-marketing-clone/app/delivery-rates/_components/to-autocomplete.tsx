@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react"; // Ensure lucide-react is installed
+import { Check, ChevronsUpDown } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,26 +17,19 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { toAreas } from "./areas"; // Ensure this is properly defined
+import { toAreas } from "./areas";
 import { useInstantRates } from "@/hooks/use-instant-rates";
-
-// Define type for InstantRatesState
-type InstantRatesState = {
-  to?: string; // Optional 'to'
-  setTo: (value: string) => void;
-};
 
 export function ToAutocomplete() {
   const [open, setOpen] = React.useState(false);
-  const [selectedArea, setSelectedArea] = React.useState<string | "">("");
-  
-  // Use the hook and explicitly define the state type
-  const setTo = useInstantRates((state: InstantRatesState) => state.setTo);
+  const [selectedArea, setSelectedArea] = React.useState("");
+  const setTo = useInstantRates((state) => state.setTo);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
+          variant="outline"
           role="combobox"
           aria-expanded={open}
           className={cn(
@@ -57,7 +51,7 @@ export function ToAutocomplete() {
                 <CommandItem
                   key={area}
                   value={area}
-                  onSelect={(currentArea: string) => {
+                  onSelect={(currentArea) => {
                     setSelectedArea(
                       currentArea.toLowerCase() === selectedArea.toLowerCase()
                         ? ""

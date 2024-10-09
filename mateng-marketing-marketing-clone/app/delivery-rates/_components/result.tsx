@@ -4,15 +4,6 @@ import { instantRates } from "@/data/instant-rates";
 import { useInstantRates } from "@/hooks/use-instant-rates";
 import { cn } from "@/lib/utils";
 
-// Define the type for the state that useInstantRates returns
-type InstantRatesState = {
-  from?: string;  // Allow undefined
-  to?: string;    // Allow undefined
-  setFrom: (value: string) => void;
-  setTo: (value: string) => void;
-};
-
-// Function to get the rate based on 'from' and 'to'
 const getRate = (from?: string, to?: string) => {
   if (from && to) {
     const lowercaseFrom = from.trim().toLowerCase();
@@ -27,13 +18,13 @@ const getRate = (from?: string, to?: string) => {
       }
     }
   }
+
   return undefined;
 };
 
 export function Result() {
-  // Use the hook and explicitly define the state type
-  const from = useInstantRates((state: InstantRatesState) => state.from);
-  const to = useInstantRates((state: InstantRatesState) => state.to);
+  const from = useInstantRates((state) => state.from);
+  const to = useInstantRates((state) => state.to);
 
   const rate = getRate(from, to);
 
