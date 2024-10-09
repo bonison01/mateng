@@ -22,8 +22,8 @@ import { useInstantRates } from "@/hooks/use-instant-rates";
 
 // Define the type for the state returned by useInstantRates
 type InstantRatesState = {
-  from: string | undefined; // Allow 'from' to be undefined
-  to: string | undefined;   // Allow 'to' to be undefined
+  from?: string; // Mark 'from' as optional
+  to?: string;   // Mark 'to' as optional
   setFrom: (value: string) => void;
   setTo: (value: string) => void;
 };
