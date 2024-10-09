@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 
 // Define the shape of the state in useInstantRates
 interface InstantRatesState {
-  from: string;
-  to: string;
+  from?: string;  // Allow undefined
+  to?: string;    // Allow undefined
 }
 
 interface ResultProps {
@@ -32,8 +32,8 @@ const getRate = (from?: string, to?: string): string | undefined => {
 
 // Result component
 export function Result({ className }: ResultProps) {
-  const from = useInstantRates((state: InstantRatesState) => state.from); // Explicitly typed
-  const to = useInstantRates((state: InstantRatesState) => state.to); // Explicitly typed
+  const from = useInstantRates((state: InstantRatesState) => state.from); // Allow undefined
+  const to = useInstantRates((state: InstantRatesState) => state.to);     // Allow undefined
 
   const rate = getRate(from, to);
 
