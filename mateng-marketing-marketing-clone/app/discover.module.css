@@ -1,0 +1,172 @@
+.discover {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0;
+  flex: 1;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.searchBar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 35px;
+}
+
+.searchButton {
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: white;
+  background-color: #064923;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #013710;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  margin: 50px 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+
+.highlight {
+  color: #03511e;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.separator {
+  width: 1px;
+  background-color: #ccc;
+  height: 80px;
+  margin: 0 15px;
+}
+
+.categories {
+  margin-top: 20px;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.shopList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shopCard {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.shopPhoto {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.seeMoreButton {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  color: white;
+  background-color: #064923;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.seeMoreButton:hover {
+  background-color: #013710;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .searchContainer {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .searchBar {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .statsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .statValue {
+    font-size: 1.2rem;
+  }
+
+  .highlight {
+    font-size: 1.5rem;
+  }
+
+  .separator {
+    height: 30px;
+  }
+
+  .shopCard {
+    width: 100%;
+  }
+}
