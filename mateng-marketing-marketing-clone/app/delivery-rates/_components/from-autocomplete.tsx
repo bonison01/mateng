@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { fromAreas } from "./areas";
-import { useInstantRates } from "@/hooks/use-instant-rates";
+import { useInstantRates } from "@/app/delivery-rates/_components/use-instant-rates";
 
 // Define props type for the FromAutocomplete component
 interface FromAutocompleteProps {

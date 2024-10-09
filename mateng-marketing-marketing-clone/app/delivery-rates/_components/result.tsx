@@ -1,7 +1,7 @@
 "use client";
 
 import { instantRates } from "./instant-rates";
-import { useInstantRates } from "@/hooks/use-instant-rates";
+import { useInstantRates } from "@/app/delivery-rates/_components/use-instant-rates";
 import { cn } from "@/lib/utils";
 
 // Define the shape of the state in useInstantRates
