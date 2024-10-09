@@ -12,13 +12,13 @@ import {
   CommandItem,
 } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { fromAreas } from "./areas";
-import { useInstantRates } from "@/app/delivery-rates/_components/use-instant-rates";
+import { toAreas } from "./areas";
+import { useInstantRates } from "@/app/(marketing)/delivery-rates/_components/use-instant-rates";
 
-export function FromAutocomplete() {
+export function ToAutocomplete() {
   const [open, setOpen] = React.useState(false);
   const [selectedArea, setSelectedArea] = React.useState<string>("");
-  const setFrom = useInstantRates((state) => state.setFrom);
+  const setTo = useInstantRates((state) => state.setTo);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -27,7 +27,7 @@ export function FromAutocomplete() {
           role="combobox"
           aria-expanded={open}
           className={cn(
-            "min-w-[200px]  sm:min-w-[250px] justify-between sm:text-xl capitalize",
+            "min-w-[200px] font-medium sm:min-w-[250px] justify-between sm:text-xl capitalize",
             !selectedArea && "text-gray-400"
           )}
         >
@@ -40,7 +40,7 @@ export function FromAutocomplete() {
           <CommandInput placeholder="Search location..." />
           <CommandEmpty>No location found.</CommandEmpty>
           <CommandGroup className="h-[200px] overflow-auto">
-            {fromAreas.map((area) => (
+            {toAreas.map((area) => (
               <CommandItem
                 key={area}
                 value={area}
@@ -50,7 +50,7 @@ export function FromAutocomplete() {
                       ? ""
                       : currentArea
                   );
-                  setFrom(
+                  setTo(
                     currentArea.toLowerCase() === selectedArea.toLowerCase()
                       ? ""
                       : currentArea

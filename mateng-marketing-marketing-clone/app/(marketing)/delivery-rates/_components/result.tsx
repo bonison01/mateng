@@ -1,7 +1,7 @@
 "use client";
 
 import { instantRates } from "./instant-rates";
-import { useInstantRates } from "@/app/delivery-rates/_components/use-instant-rates";
+import { useInstantRates } from "@/app/(marketing)/delivery-rates/_components/use-instant-rates";
 import { cn } from "@/lib/utils";
 
 // Helper function to get the rate from `from` and `to`

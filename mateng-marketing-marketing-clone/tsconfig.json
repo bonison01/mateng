@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/_components/GlobalFooter.js", "app/(marketing)/_components/GlobalHeader.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(marketing)/_components/GlobalFooter.js", "app/(marketing)/_components/GlobalHeader.js"],
   "exclude": ["node_modules"]
 }
