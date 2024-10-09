@@ -1,0 +1,24 @@
+/* page.module.css */
+.mainContainer {
+    background: linear-gradient(135deg, yellow, orange, magenta); /* Mateng's gradient colors */
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; /* Space between components */
+  }
+  
+  .component-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
