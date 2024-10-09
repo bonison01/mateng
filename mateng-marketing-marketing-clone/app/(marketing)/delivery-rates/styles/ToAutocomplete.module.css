@@ -1,0 +1,39 @@
+/* Styles specific to ToAutocomplete component */
+.autocomplete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .autocompleteButton {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .autocompleteButton:hover {
+    background-color: #218838;
+  }
+  
+  .autocompleteList {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .autocompleteItem {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .autocompleteItem:hover {
+    background-color: #e9ecef;
+  }
+  

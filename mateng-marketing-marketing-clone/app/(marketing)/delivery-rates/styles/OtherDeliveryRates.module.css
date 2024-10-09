@@ -1,0 +1,22 @@
+/* Styles for Other Delivery Rates */
+.ratesContainer {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .rateList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .rateItem {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .rateItem span {
+    color: #495057;
+  }
+  
