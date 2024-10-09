@@ -1,15 +1,15 @@
 import { QuickLink } from "../_components/quick-link-section";
-import { Footer } from "../_components/footer-section";
+import GlobalFooter from "../_components/GlobalFooter";
 import { MainInstantRate } from "./_components/instant-delivery-rate";
 import { OtherRate } from "./_components/other-delivery-rates";
 
 export default function DeliveryRatesPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      <MainInstantRate /> 
+      <MainInstantRate />
       <OtherRate />
-      <QuickLink currentPage="delivery-rates"/>
-      <Footer />
+      <QuickLink currentPage="delivery-rates" />
+      <GlobalFooter />
     </main>
   );
 }
