@@ -20,16 +20,25 @@ import {
 import { fromAreas } from "./areas";
 import { useInstantRates } from "@/hooks/use-instant-rates";
 
+// Define the type for the state returned by useInstantRates
+type InstantRatesState = {
+  from: string;
+  to: string;
+  setFrom: (value: string) => void;
+  setTo: (value: string) => void;
+};
+
 export function FromAutocomplete() {
   const [open, setOpen] = React.useState(false);
   const [selectedArea, setSelectedArea] = React.useState("");
-  const setFrom = useInstantRates((state) => state.setFrom);
+  
+  // Define the type for state
+  const setFrom = useInstantRates((state: InstantRatesState) => state.setFrom);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          variant="outline"
           role="combobox"
           aria-expanded={open}
           className={cn(
@@ -50,7 +59,8 @@ export function FromAutocomplete() {
               <CommandItem
                 key={area}
                 value={area}
-                onSelect={(currentArea) => {
+                // Explicitly define the type of currentArea
+                onSelect={(currentArea: string) => {
                   setSelectedArea(
                     currentArea.toLowerCase() === selectedArea.toLowerCase()
                       ? ""

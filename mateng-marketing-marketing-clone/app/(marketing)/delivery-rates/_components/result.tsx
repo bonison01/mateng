@@ -4,6 +4,14 @@ import { instantRates } from "@/data/instant-rates";
 import { useInstantRates } from "@/hooks/use-instant-rates";
 import { cn } from "@/lib/utils";
 
+// Define the type for the state that useInstantRates returns
+type InstantRatesState = {
+  from: string;
+  to: string;
+  setFrom: (value: string) => void;
+  setTo: (value: string) => void;
+};
+
 const getRate = (from?: string, to?: string) => {
   if (from && to) {
     const lowercaseFrom = from.trim().toLowerCase();
@@ -23,8 +31,9 @@ const getRate = (from?: string, to?: string) => {
 };
 
 export function Result() {
-  const from = useInstantRates((state) => state.from);
-  const to = useInstantRates((state) => state.to);
+  // Define the type of state for useInstantRates
+  const from = useInstantRates((state: InstantRatesState) => state.from);
+  const to = useInstantRates((state: InstantRatesState) => state.to);
 
   const rate = getRate(from, to);
 
