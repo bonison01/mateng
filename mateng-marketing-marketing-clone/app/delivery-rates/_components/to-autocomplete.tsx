@@ -4,25 +4,21 @@ import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+} from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { toAreas } from "./areas";
 import { useInstantRates } from "@/app/delivery-rates/_components/use-instant-rates";
 
-// Define the shape of the state returned by useInstantRates
-type InstantRatesState = {
-  setTo: (to: string) => void;
-};
-
-// Define props type for the ToAutocomplete component
-interface ToAutocompleteProps {
-  className?: string;
-}
-
-export function ToAutocomplete({ className }: ToAutocompleteProps) {
+export function ToAutocomplete() {
   const [open, setOpen] = React.useState(false);
-  const [selectedArea, setSelectedArea] = React.useState<string>(""); // Explicitly type as string
-  const setTo = useInstantRates((state: InstantRatesState) => state.setTo);
+  const [selectedArea, setSelectedArea] = React.useState<string>("");
+  const setTo = useInstantRates((state) => state.setTo);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -32,8 +28,7 @@ export function ToAutocomplete({ className }: ToAutocompleteProps) {
           aria-expanded={open}
           className={cn(
             "min-w-[200px] font-medium sm:min-w-[250px] justify-between sm:text-xl capitalize",
-            !selectedArea && "text-gray-400",
-            className // Apply className here
+            !selectedArea && "text-gray-400"
           )}
         >
           {selectedArea || "Select a location..."}
@@ -49,11 +44,18 @@ export function ToAutocomplete({ className }: ToAutocompleteProps) {
               <CommandItem
                 key={area}
                 value={area}
-                onSelect={(currentArea: string) => {
-                  const isSelected = currentArea.toLowerCase() === selectedArea.toLowerCase();
-                  setSelectedArea(isSelected ? "" : currentArea);
-                  setTo(isSelected ? "" : currentArea); // Update the hook with the selected area
-                  setOpen(false); // Close the popover when an item is selected
+                onSelect={(currentArea: string) => {  // Explicitly type 'currentArea' as string
+                  setSelectedArea(
+                    currentArea.toLowerCase() === selectedArea.toLowerCase()
+                      ? ""
+                      : currentArea
+                  );
+                  setTo(
+                    currentArea.toLowerCase() === selectedArea.toLowerCase()
+                      ? ""
+                      : currentArea
+                  );
+                  setOpen(false);
                 }}
               >
                 <Check

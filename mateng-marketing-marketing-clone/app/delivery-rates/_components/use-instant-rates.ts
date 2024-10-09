@@ -1,4 +1,3 @@
-import { instantRates } from "./instant-rates";
 import { create } from "zustand";
 
 type InstantRateStore = {

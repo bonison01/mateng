@@ -4,16 +4,6 @@ import { instantRates } from "./instant-rates";
 import { useInstantRates } from "@/app/delivery-rates/_components/use-instant-rates";
 import { cn } from "@/lib/utils";
 
-// Define the shape of the state in useInstantRates
-interface InstantRatesState {
-  from?: string;  // Allow undefined
-  to?: string;    // Allow undefined
-}
-
-interface ResultProps {
-  className?: string;
-}
-
 // Helper function to get the rate from `from` and `to`
 const getRate = (from?: string, to?: string): string | undefined => {
   if (from && to) {
@@ -31,9 +21,9 @@ const getRate = (from?: string, to?: string): string | undefined => {
 };
 
 // Result component
-export function Result({ className }: ResultProps) {
-  const from = useInstantRates((state: InstantRatesState) => state.from); // Allow undefined
-  const to = useInstantRates((state: InstantRatesState) => state.to);     // Allow undefined
+export function Result({ className }: { className?: string }) {
+  const from = useInstantRates((state) => state.from);
+  const to = useInstantRates((state) => state.to);
 
   const rate = getRate(from, to);
 

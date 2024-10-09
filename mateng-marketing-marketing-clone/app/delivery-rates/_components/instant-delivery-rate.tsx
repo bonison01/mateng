@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import { FromAutocomplete } from "./from-autocomplete";
 import { ToAutocomplete } from "./to-autocomplete";
 import { Result } from "./result";
-import styles from "./instant-delivery-rate.module.css"; // Import the custom CSS
 
 const font = Poppins({
   subsets: ["latin"],
@@ -12,20 +11,25 @@ const font = Poppins({
 
 export function MainInstantRate() {
   return (
-    <div className={cn(styles.instantRateContainer, font.className)}>
-      <div className={styles.instantRateHeader}>Instant Delivery Rate</div>
-      <div className={cn(styles.instantRateForm, font.className)}>
-        <div>
+    <div className={cn("w-full pt-14 sm:pt-20", font.className)}>
+      <div className="text-2xl sm:text-4xl font-bold text-center py-8">Instant Delivery Rate</div>
+      <div
+        className={cn(
+          "flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 text-lg sm:text-2xl font-semibold w-full",
+          font.className
+        )}
+      >
+        <div className="text-center sm:space-y-2">
           <p>From</p>
-          <FromAutocomplete className={styles.instantRateInput} />
+          <FromAutocomplete />
         </div>
-        <div>
+        <div className="text-center sm:space-y-2">
           <p>To</p>
-          <ToAutocomplete className={styles.instantRateInput} />
+          <ToAutocomplete />
         </div>
-        <div>
+        <div className="text-center sm:space-y-2">
           <p>Rate</p>
-          <Result className={styles.instantRateInput} />
+          <Result />
         </div>
       </div>
     </div>
