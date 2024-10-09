@@ -15,7 +15,7 @@ const GlobalHeader = () => {
         <Link href="/" className={styles.navButton}>
           Home
         </Link>
-        <Link href="/delivery-rates" className={styles.navButton}>
+        <Link href="/marketing/delivery-rates" className={styles.navButton}>
           Delivery Rates
         </Link>
         <Link href="/pricing" className={styles.navButton}>
