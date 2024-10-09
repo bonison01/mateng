@@ -1,0 +1,103 @@
+.discover {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Space between title and search container */
+  align-items: center; /* Align items vertically in the center */
+  margin-bottom: 20px; /* Spacing below the header */
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 0; /* Remove margin to keep it aligned */
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: flex-end; /* Aligns the container to the right */
+  align-items: center; /* Center align the input and button vertically */
+  width: 100%; /* Ensure the container takes full width */
+  margin-right: 10px; /* Space between input and button */
+}
+
+.searchBar {
+  padding: 10px; /* Padding inside the search bar */
+  font-size: 1rem; /* Font size for the input */
+  border: 1px solid #ccc; /* Border for the input */
+  border-radius: 4px; /* Rounded corners */
+  margin-right: 10px; /* Space between input and button */
+}
+
+.searchButton {
+  padding: 10px 20px; /* Padding for the button */
+  font-size: 1rem; /* Font size for the button */
+  color: white; /* Text color for the button */
+  background-color: #007bff; /* Background color for the button */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.searchButton:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.categories {
+  margin-top: 20px; /* Space between categories */
+}
+
+.category {
+  margin-bottom: 20px; /* Space between categories */
+}
+
+.shopList {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of shop cards */
+}
+
+.shopCard {
+  border: 1px solid #ccc; /* Border for shop cards */
+  border-radius: 8px; /* Rounded corners for shop cards */
+  padding: 10px; /* Padding inside the shop card */
+  margin: 10px; /* Margin between shop cards */
+  width: 200px; /* Fixed width for shop cards */
+  text-align: center; /* Center text in shop cards */
+}
+
+.shopPhoto {
+  width: 100%; /* Make photo responsive */
+  border-radius: 4px; /* Rounded corners for photos */
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between each stat and separator */
+}
+
+.stat {
+  text-align: center; /* Center text for stats */
+}
+
+.statValue {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.highlight {
+  color: #00cc3a; /* Highlight color */
+  font-size: 2rem; /* Highlight font size */
+  font-weight: bold; /* Bold highlight */
+}
+
+.separator {
+  width: 2px;
+  height: 50px;
+  background-color: white; /* White line between each stat */
+  align-self: center; /* Center the separator */
+}
